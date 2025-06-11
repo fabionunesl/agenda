@@ -1,3 +1,33 @@
 .navbar-brand img {
     width: 50px;
 }
+
+#main-title {
+    text-align: center;
+    margin: 15px 0 30px;
+}
+
+/* HOME */
+#contacts-table {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#contacts-table thead {
+    color: #FFF;
+    background-color: #007bff;
+}
+
+#empty-list-text {
+    text-align: center;
+}
+
+#msg {
+    color: #155724;
+
+}
+
+#contacts-table tbody {
+    color: #000;
+    background-color: #666;
+}
