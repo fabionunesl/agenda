@@ -15,7 +15,40 @@
 
 #contacts-table thead {
     color: #FFF;
-    background-color: #007bff;
+    background-color: #007BFF;
+}
+
+.col-id {
+    font-weight: bold;
+}
+
+/* BOTOES DO LADO DIREITO DA LINHA */
+.actions {
+    text-align: right;
+    width: 150px;
+}
+
+.actions i {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.check-icon {
+    color: #1E7E34;
+}
+
+.edit-icon {
+    color: #007BFF;
+}
+
+.delete-btn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+.delete-icon {
+    color: #BD2130;
 }
 
 #empty-list-text {
@@ -24,10 +57,11 @@
 
 #msg {
     color: #155724;
-
-}
-
-#contacts-table tbody {
-    color: #000;
-    background-color: #666;
+    background-color: #D4EDDA;
+    border: 1px solid #C3E6CB;
+    padding: 10px;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 30px;
 }
