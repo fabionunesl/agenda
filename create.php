@@ -1,11 +1,14 @@
 <?php
+
 include_once("templates/header.php");
+
 ?>
+
 
 <div class="container">
     <?php include_once("templates/backbtn.html"); ?>
     <h1 id="main-title">Adicionar contato</h1>
-    <form id="create-form" action="<?= $BASE_URL ?>/config/process.html" method="POST">
+    <form id="create-form" action="<?= $BASE_URL ?>/config/process.php" method="POST">
         <input type="hidden" name="type" value="create">
         <div class="form-group">
             <label for="name">Nome do contato:</label>
