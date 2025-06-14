@@ -16,14 +16,12 @@ $data = $_POST;
 if (!empty($data)) {
 
     //Criar contato 
-    // Verifica se o formulário enviado é de criação
     if ($data["type"] === "create") {
 
         $name = $data["name"];
         $phone = $data["phone"];
         $observations = $data["observations"];
 
-        // Prepara a query de inserção
         $query = "INSERT INTO contacts (name, phone, observations) VALUES (:name, :phone, :observations)";
 
         $stmt = $conn->prepare($query);
@@ -33,7 +31,6 @@ if (!empty($data)) {
         $stmt->bindParam(":observations", $observations);
 
         try {
-
             $stmt->execute();
             $_SESSION["msg"] = "Contato criado com sucesso!";
         } catch (PDOException $e) {
@@ -41,7 +38,58 @@ if (!empty($data)) {
             $error = $e->getMessage();
             echo "Erro: $error";
         }
+
+        //EDITAR CONTATO
+
+    } else if ($data["type"] === "edit") {
+        $name = $data["name"];
+        $phone = $data["phone"];
+        $observations = $data["observations"];
+        $id = $data["id"];
+
+        $query = "UPDATE contacts 
+                    SET name = :name, phone = :phone, observations = :observations 
+                    WHERE id = :id";
+        $stmt = $conn->prepare($query);
+
+        $stmt->bindParam(":name", $name);
+        $stmt->bindParam(":phone", $phone);
+        $stmt->bindParam(":observations", $observations);
+        $stmt->bindParam(":id", $id);
+
+        try {
+
+            $stmt->execute();
+            $_SESSION["msg"] = "Contato atualizado com sucesso!";
+        } catch (PDOException $e) {
+            //erro na conexão
+            $error = $e->getMessage();
+            echo "Erro: $error";
+        }
+
+        //DELETAR CONTATO
+    } else if ($data["type"] === "delete") {
+
+        $id = $data["id"];
+
+        $query = "DELETE FROM contacts WHERE id=:id";
+
+
+        $stmt = $conn->prepare($query);
+
+        $stmt->bindParam(":id", $id);
+
+        try {
+
+            $stmt->execute();
+            $_SESSION["msg"] = "Contato foi deletado com sucesso!";
+        } catch (PDOException $e) {
+            //erro na conexão
+            $error = $e->getMessage();
+            echo "Erro: $error";
+        }
     }
+
 
     // Redirect Home
     header("Location: http://localhost/agenda/index.php ");
