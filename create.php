@@ -16,7 +16,7 @@ include_once("templates/header.php");
         </div>
         <div class="form-group">
             <label for="phone">Telefone do contato:</label>
-            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Digite o telefone" required>
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="(99) 9 9999-9999" required maxlength="15">
         </div>
         <div class="form-group">
             <label for="observations">Observações:</label>

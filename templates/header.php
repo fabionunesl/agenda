@@ -32,16 +32,33 @@ if (isset($_SESSION['msg'])) {
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="<?= $BASE_URL ?>/index.php">
-                <img src="<?= $BASE_URL ?>/img/logo.svg" alt="Agenda">
+        <nav class="navbar navbar-expand-lg" style="background: linear-gradient(45deg, #C71585, #DA70D6); box-shadow: 0 4px 12px rgba(199,21,133,0.4); border-radius: 0 0 15px 15px;">
+            <a class="navbar-brand" href="<?= $BASE_URL ?>/index.php" style="display: flex; align-items: center;">
+                <img src="<?= $BASE_URL ?>/img/logo.svg" alt="Agenda" style="width: 60px; border-radius: 10px; box-shadow: 0 4px 8px rgba(255, 182, 193, 0.5); margin-right: 10px;">
+                <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #fff; font-weight: 700; font-size: 1.8rem; text-shadow: 1px 1px 3px #f4c2c2;">Agenda</span>
             </a>
-            <div>
-                <div class="navbar-nav">
-                    <a class="nav-link active" id="home-link" href="<?= $BASE_URL ?>/index.php">Agenda</a>
-                    <a class="nav-link active" href="<?= $BASE_URL ?>/create.php">Adicionar Contato</a>
-                </div>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                style="border-color: #fff;">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav" style="justify-content: flex-end;">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="<?= $BASE_URL ?>/index.php"
+                            style="color: #fff; font-weight: 600; font-family: 'Poppins', sans-serif; padding: 10px 20px; border-radius: 25px; transition: background 0.3s;">
+                            Agenda
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="<?= $BASE_URL ?>/create.php"
+                            style="color: #fff; font-weight: 600; font-family: 'Poppins', sans-serif; padding: 10px 20px; border-radius: 25px; transition: background 0.3s;">
+                            Adicionar Contato
+                        </a>
+                    </li>
+                </ul>
             </div>
         </nav>
-
     </header>
